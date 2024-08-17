@@ -1,0 +1,12 @@
+﻿{
+  "Id": "RedditorClass",
+  "DisplayName": "Redditor Class",
+  "Author": "CascadingDragon",
+  "Version": "1.0.0",
+  "ManagerVersion": "0.27.11",
+  "Requirements": [],
+  "AssemblyName": "RedditorClass.dll",
+  "EntryMethod": "RedditorClass.Main.Load",
+  "HomePage": "",
+  "Repository": ""
+}
