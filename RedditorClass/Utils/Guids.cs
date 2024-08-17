@@ -20,5 +20,13 @@
         internal const string chatospeed = "9e478728-5248-4b8e-8d06-3b3b404b558a";
         internal const string chatodr = "627e9798-d6db-44b9-8523-4638baa9bd38";
         internal const string chatosr = "3A53EFCF-F4A7-4AC8-9B17-DEDC9FE1ACE6";
+        internal const string chatosp = "934d8bcb-b709-4f2a-9f69-7b6ab31568e3";
+        internal const string chatodc = "f677586a-efdb-4eb9-bfd3-f7cf81e38a9b";
+        internal const string chatochacap = "57f4ee94-78ab-40b8-bcd8-a85afd85e85e";
+        internal const string unused4 = "eb7baf21-6e1b-4089-9dbb-b236dc566d51";
+        internal const string unused5 = "e24bb35c-351c-47c5-8fe8-f3c25e1087af";
+        internal const string unused6 = "1a5bb333-d02e-4db2-9960-fe76e38da609";
+        internal const string unused7 = "e2177bb0-69d3-47e7-bd15-0b9c70036953";
+        internal const string unused8 = "b4c6e3f3-4c67-42e1-beac-b53b6e023666";
     }
 }

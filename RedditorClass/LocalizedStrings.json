@@ -187,6 +187,39 @@
 
   {
     "Key": "ChaToDR.Description",
-    "enGB": "The Redditor adds his {g|Encyclopedia:Charisma}Charisma{/g} bonus (if any) to his Damage Reduction."
+    "enGB": "The Redditor adds his {g|Encyclopedia:Charisma}Charisma{/g} bonus (if any) to his Damage Reduction. (CURRENTLY BROKEN)"
+  },
+
+  {
+    "Key": "ChaToSpellPen.Name",
+    "ProcessTemplates": false,
+    "enGB": "Redditor Spell Penetration"
+  },
+
+  {
+    "Key": "ChaToSpellPen.Description",
+    "enGB": "The Redditor adds his {g|Encyclopedia:Charisma}Charisma{/g} bonus (if any) to his Spell Penetration. "
+  },
+
+  {
+    "Key": "ChaToSpellDC.Name",
+    "ProcessTemplates": false,
+    "enGB": "Redditor Spell DC"
+  },
+
+  {
+    "Key": "ChaToSpellDC.Description",
+    "enGB": "The Redditor adds his {g|Encyclopedia:Charisma}Charisma{/g} bonus (if any) to his spell's DC. "
+  },
+
+  {
+    "Key": "ChaToChaCap.Name",
+    "ProcessTemplates": false,
+    "enGB": "Reddit Moderator Charisma"
+  },
+
+  {
+    "Key": "ChaToChaCap.Description",
+    "enGB": "The Redditor adds his {g|Encyclopedia:Charisma}Charisma{/g} bonus (if any) to his {g|Encyclopedia:Charisma}Charisma{/g}, again!"
   }
 ]

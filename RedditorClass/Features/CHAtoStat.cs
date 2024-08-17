@@ -3,11 +3,14 @@ using Kingmaker.Blueprints.Classes;
 using RedditorClass.Utils;
 using Kingmaker.EntitySystem.Stats;
 using RedditorClass.Components;
+using Kingmaker.Enums;
 
 namespace RedditorClass.Features
 {
     internal class CHAtoStat
     {
+        private static ModifierDescriptor buffdescriptor = ModifierDescriptor.Inherent;
+
         private const string featurenamecha = "ChaToCha";
         private const string displaynamecha = "ChaToCha.Name";
         private const string displaydescriptioncha = "ChaToCha.Description";
@@ -17,7 +20,25 @@ namespace RedditorClass.Features
                 .SetDisplayName(displaynamecha)
                 .SetDescription(displaydescriptioncha)
                 .AddDerivativeStatBonus(baseStat: StatType.Charisma,
-                    descriptor: Kingmaker.Enums.ModifierDescriptor.Inherent,
+                    descriptor: buffdescriptor,
+                    derivativeStat: StatType.Charisma)
+                .AddRecalculateOnStatChange(stat: StatType.Charisma)
+                .Configure();
+            return feature;
+        }
+        private const string featurenamechacap = "ChaToChaCap";
+        private const string displaynamechacap = "ChaToChaCap.Name";
+        private const string displaydescriptionchacap = "ChaToChaCap.Description";
+        public static BlueprintFeature ConfigureCHA_CAP()
+        {
+            BlueprintFeature feature = FeatureConfigurator.New(featurenamechacap, Guids.chatochacap)
+                .SetDisplayName(displaynamechacap)
+                .SetDescription(displaydescriptionchacap)
+                .AddDerivativeStatBonus(baseStat: StatType.Charisma,
+                    descriptor: ModifierDescriptor.UntypedStackable,
+                    derivativeStat: StatType.Charisma)
+                .AddDerivativeStatBonus(baseStat: StatType.Charisma,
+                    descriptor: ModifierDescriptor.UntypedStackable,
                     derivativeStat: StatType.Charisma)
                 .AddRecalculateOnStatChange(stat: StatType.Charisma)
                 .Configure();
@@ -32,7 +53,7 @@ namespace RedditorClass.Features
                 .SetDisplayName(displaynameac)
                 .SetDescription(displaydescriptionac)
                 .AddDerivativeStatBonus(baseStat: StatType.Charisma,
-                    descriptor: Kingmaker.Enums.ModifierDescriptor.Inherent,
+                    descriptor: buffdescriptor,
                     derivativeStat: StatType.AC)
                 .AddRecalculateOnStatChange(stat: StatType.Charisma)
                 .Configure();
@@ -47,7 +68,7 @@ namespace RedditorClass.Features
                 .SetDisplayName(displaynamestr)
                 .SetDescription(displaydescriptionstr)
                 .AddDerivativeStatBonus(baseStat: StatType.Charisma,
-                    descriptor: Kingmaker.Enums.ModifierDescriptor.Inherent,
+                    descriptor: buffdescriptor,
                     derivativeStat: StatType.Strength)
                 .AddRecalculateOnStatChange(stat: StatType.Charisma)
                 .Configure();
@@ -62,7 +83,7 @@ namespace RedditorClass.Features
                 .SetDisplayName(displaynamedex)
                 .SetDescription(displaydescriptiondex)
                 .AddDerivativeStatBonus(baseStat: StatType.Charisma,
-                    descriptor: Kingmaker.Enums.ModifierDescriptor.Inherent,
+                    descriptor: buffdescriptor,
                     derivativeStat: StatType.Dexterity)
                 .AddRecalculateOnStatChange(stat: StatType.Charisma)
                 .Configure();
@@ -77,7 +98,7 @@ namespace RedditorClass.Features
                 .SetDisplayName(displaynamecon)
                 .SetDescription(displaydescriptioncon)
                 .AddDerivativeStatBonus(baseStat: StatType.Charisma,
-                    descriptor: Kingmaker.Enums.ModifierDescriptor.Inherent,
+                    descriptor: buffdescriptor,
                     derivativeStat: StatType.Constitution)
                 .AddRecalculateOnStatChange(stat: StatType.Charisma)
                 .Configure();
@@ -92,7 +113,7 @@ namespace RedditorClass.Features
                 .SetDisplayName(displaynameint)
                 .SetDescription(displaydescriptionint)
                 .AddDerivativeStatBonus(baseStat: StatType.Charisma,
-                    descriptor: Kingmaker.Enums.ModifierDescriptor.Inherent,
+                    descriptor: buffdescriptor,
                     derivativeStat: StatType.Intelligence)
                 .AddRecalculateOnStatChange(stat: StatType.Charisma)
                 .Configure();
@@ -107,7 +128,7 @@ namespace RedditorClass.Features
                 .SetDisplayName(displaynamewis)
                 .SetDescription(displaydescriptionwis)
                 .AddDerivativeStatBonus(baseStat: StatType.Charisma,
-                    descriptor: Kingmaker.Enums.ModifierDescriptor.Inherent,
+                    descriptor: buffdescriptor,
                     derivativeStat: StatType.Wisdom)
                 .AddRecalculateOnStatChange(stat: StatType.Charisma)
                 .Configure();
@@ -122,13 +143,13 @@ namespace RedditorClass.Features
                 .SetDisplayName(displaynamesaves)
                 .SetDescription(displaydescriptionsaves)
                 .AddDerivativeStatBonus(baseStat: StatType.Charisma,
-                    descriptor: Kingmaker.Enums.ModifierDescriptor.Inherent,
+                    descriptor: buffdescriptor,
                     derivativeStat: StatType.SaveFortitude)
                 .AddDerivativeStatBonus(baseStat: StatType.Charisma,
-                    descriptor: Kingmaker.Enums.ModifierDescriptor.Inherent,
+                    descriptor: buffdescriptor,
                     derivativeStat: StatType.SaveReflex)
                 .AddDerivativeStatBonus(baseStat: StatType.Charisma,
-                    descriptor: Kingmaker.Enums.ModifierDescriptor.Inherent,
+                    descriptor: buffdescriptor,
                     derivativeStat: StatType.SaveWill)
                 .AddRecalculateOnStatChange(stat: StatType.Charisma)
                 .Configure();
@@ -143,7 +164,7 @@ namespace RedditorClass.Features
                 .SetDisplayName(displaynameinit)
                 .SetDescription(displaydescriptioninit)
                 .AddDerivativeStatBonus(baseStat: StatType.Charisma,
-                    descriptor: Kingmaker.Enums.ModifierDescriptor.Inherent,
+                    descriptor: buffdescriptor,
                     derivativeStat: StatType.Initiative)
                 .AddRecalculateOnStatChange(stat: StatType.Charisma)
                 .Configure();
@@ -158,7 +179,7 @@ namespace RedditorClass.Features
                 .SetDisplayName(displaynamebab)
                 .SetDescription(displaydescriptionbab)
                 .AddDerivativeStatBonus(baseStat: StatType.Charisma,
-                    descriptor: Kingmaker.Enums.ModifierDescriptor.Inherent,
+                    descriptor: buffdescriptor,
                     derivativeStat: StatType.BaseAttackBonus)
                 .AddRecalculateOnStatChange(stat: StatType.Charisma)
                 .Configure();
@@ -173,7 +194,7 @@ namespace RedditorClass.Features
                 .SetDisplayName(displaynamedam)
                 .SetDescription(displaydescriptiondam)
                 .AddDerivativeStatBonus(baseStat: StatType.Charisma,
-                    descriptor: Kingmaker.Enums.ModifierDescriptor.Inherent,
+                    descriptor: buffdescriptor,
                     derivativeStat: StatType.AdditionalDamage)
                 .AddRecalculateOnStatChange(stat: StatType.Charisma)
                 .Configure();
@@ -188,8 +209,34 @@ namespace RedditorClass.Features
                 .SetDisplayName(displaynamespeed)
                 .SetDescription(displaydescriptionspeed)
                 .AddDerivativeStatBonus(baseStat: StatType.Charisma,
-                    descriptor: Kingmaker.Enums.ModifierDescriptor.Inherent,
+                    descriptor: buffdescriptor,
                     derivativeStat: StatType.Speed)
+                .AddRecalculateOnStatChange(stat: StatType.Charisma)
+                .Configure();
+            return feature;
+        }
+        private const string featurenamesp = "ChaToSpellPen";
+        private const string displaynamesp = "ChaToSpellPen.Name";
+        private const string displaydescriptionsp = "ChaToSpellPen.Description";
+        public static BlueprintFeature ConfigureSpellPen()
+        {
+            BlueprintFeature feature = FeatureConfigurator.New(featurenamesp, Guids.chatosp)
+                .SetDisplayName(displaynamesp)
+                .SetDescription(displaydescriptionsp)
+                .AddComponent<SpellPenComponent>()
+                .AddRecalculateOnStatChange(stat: StatType.Charisma)
+                .Configure();
+            return feature;
+        }
+        private const string featurenamedc = "ChaToSpellDC";
+        private const string displaynamedc = "ChaToSpellDC.Name";
+        private const string displaydescriptiondc = "ChaToSpellDC.Description";
+        public static BlueprintFeature ConfigureSpellDC()
+        {
+            BlueprintFeature feature = FeatureConfigurator.New(featurenamedc, Guids.chatodc)
+                .SetDisplayName(displaynamedc)
+                .SetDescription(displaydescriptiondc)
+                .AddComponent<SpellDCComponent>()
                 .AddRecalculateOnStatChange(stat: StatType.Charisma)
                 .Configure();
             return feature;
@@ -244,37 +291,37 @@ namespace RedditorClass.Features
                 .SetDisplayName(displaynameskill)
                 .SetDescription(displaydescriptionskill)
                 .AddDerivativeStatBonus(baseStat: StatType.Charisma,
-                    descriptor: Kingmaker.Enums.ModifierDescriptor.Inherent,
+                    descriptor: buffdescriptor,
                     derivativeStat: StatType.SkillAthletics)
                 .AddDerivativeStatBonus(baseStat: StatType.Charisma,
-                    descriptor: Kingmaker.Enums.ModifierDescriptor.Inherent,
+                    descriptor: buffdescriptor,
                     derivativeStat: StatType.SkillKnowledgeArcana)
                 .AddDerivativeStatBonus(baseStat: StatType.Charisma,
-                    descriptor: Kingmaker.Enums.ModifierDescriptor.Inherent,
+                    descriptor: buffdescriptor,
                     derivativeStat: StatType.SkillKnowledgeWorld)
                 .AddDerivativeStatBonus(baseStat: StatType.Charisma,
-                    descriptor: Kingmaker.Enums.ModifierDescriptor.Inherent,
+                    descriptor: buffdescriptor,
                     derivativeStat: StatType.SkillLoreNature)
                 .AddDerivativeStatBonus(baseStat: StatType.Charisma,
-                    descriptor: Kingmaker.Enums.ModifierDescriptor.Inherent,
+                    descriptor: buffdescriptor,
                     derivativeStat: StatType.SkillLoreReligion)
                 .AddDerivativeStatBonus(baseStat: StatType.Charisma,
-                    descriptor: Kingmaker.Enums.ModifierDescriptor.Inherent,
+                    descriptor: buffdescriptor,
                     derivativeStat: StatType.SkillMobility)
                 .AddDerivativeStatBonus(baseStat: StatType.Charisma,
-                    descriptor: Kingmaker.Enums.ModifierDescriptor.Inherent,
+                    descriptor: buffdescriptor,
                     derivativeStat: StatType.SkillPerception)
                 .AddDerivativeStatBonus(baseStat: StatType.Charisma,
-                    descriptor: Kingmaker.Enums.ModifierDescriptor.Inherent,
+                    descriptor: buffdescriptor,
                     derivativeStat: StatType.SkillPersuasion)
                 .AddDerivativeStatBonus(baseStat: StatType.Charisma,
-                    descriptor: Kingmaker.Enums.ModifierDescriptor.Inherent,
+                    descriptor: buffdescriptor,
                     derivativeStat: StatType.SkillStealth)
                 .AddDerivativeStatBonus(baseStat: StatType.Charisma,
-                    descriptor: Kingmaker.Enums.ModifierDescriptor.Inherent,
+                    descriptor: buffdescriptor,
                     derivativeStat: StatType.SkillThievery)
                 .AddDerivativeStatBonus(baseStat: StatType.Charisma,
-                    descriptor: Kingmaker.Enums.ModifierDescriptor.Inherent,
+                    descriptor: buffdescriptor,
                     derivativeStat: StatType.SkillUseMagicDevice)
                 .AddRecalculateOnStatChange(stat: StatType.Charisma)
                 .Configure();

@@ -23,7 +23,6 @@ namespace RedditorClass.Class
                     FeatureSelectionRefs.FighterFeatSelection.Reference.Get())
                 .AddEntry(2,
                     CHAtoStat.ConfigureINT(),
-                    CHAtoStat.ConfigureDR(),
                     FeatureRefs.ArmorTraining.Reference.Get())
                 .AddEntry(3,
                     CHAtoStat.ConfigureSTR(),
@@ -70,15 +69,18 @@ namespace RedditorClass.Class
                     CHAtoStat.ConfigureSR(),
                     FeatureSelectionRefs.FighterFeatSelection.Reference.Get())
                 .AddEntry(16,
-                    //CHAtoStat.ConfigureDR(),
+                    CHAtoStat.ConfigureDR(),
                     FeatureSelectionRefs.WeaponTrainingRankUpSelection.Reference.Get(),
                     FeatureSelectionRefs.WeaponTrainingSelection.Reference.Get())
                 .AddEntry(17,
+                    CHAtoStat.ConfigureSpellPen(),
                     FeatureRefs.Bravery.Reference.Get(),
                     FeatureSelectionRefs.FighterFeatSelection.Reference.Get())
                 .AddEntry(18,
+                    CHAtoStat.ConfigureSpellDC(),
                     FeatureRefs.ArmorMastery.Reference.Get())
                 .AddEntry(19,
+                    CHAtoStat.ConfigureCHA_CAP(),
                     FeatureSelectionRefs.WeaponMasterySelection.Reference.Get(),
                     FeatureSelectionRefs.FighterFeatSelection.Reference.Get());
 

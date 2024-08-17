@@ -28,9 +28,9 @@ namespace RedditorClass.Components
         }
         public override int CalculateValue(AddDamageResistanceBase.ComponentRuntime runtime)
         {
-            Main.log.Log("Calculating DR Value ");
+            //Main.log.Log("Calculating DR Value ");
             var x = runtime.Owner.Stats.GetStat(this.Stat).CalculatePermanentValue() / 2 - 5;
-            Main.log.Log("DR Value is - " + x.ToString());
+            //Main.log.Log("DR Value is - " + x.ToString());
             return x;
         }
         public override bool IsStackable
