@@ -13,7 +13,7 @@
         internal const string chatowis = "d1d880a3-9de4-475a-8673-7c12146a7dd4";
         internal const string chatosaves = "d4e9df33-f53d-4f5e-ba2c-4f57200001bd";
         internal const string chatoskills = "ae4e74ab-9434-430b-8a33-a110dcb8c218";
-        internal const string chatocrit = "b4786bb2-86dd-4da0-a53a-e33da2986df6";
+        internal const string chatocrit = "BF1A89FB-8783-4F5E-8DDC-1063889212DE";
         internal const string chatoinit = "d12ce985-097f-4c6a-b439-2e9fc1a53615";
         internal const string chatobab = "700df46e-0ce4-4dd1-8b8a-7080bdf58e7f";
         internal const string chatodam = "c5c3e999-cf7c-4cb5-8335-ff000927f381";

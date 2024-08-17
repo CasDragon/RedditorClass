@@ -8,10 +8,12 @@ using Kingmaker.EntitySystem;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.Items;
 using Kingmaker.Enums.Damage;
+using Kingmaker.PubSubSystem;
 
 namespace RedditorClass.Components
 {
-    [AllowedOn(typeof(BlueprintUnitFact), false)]
+    [AllowedOn(typeof(BlueprintUnitFact), true)]
+    [AllowedOn(typeof(BlueprintUnit), true)]
     [AllowMultipleComponents]
     [TypeId("A9675332-F963-4F5F-AA97-7E6E85E0D8D1")]
     internal class DRComponent :  AddDamageResistanceBase
@@ -24,16 +26,9 @@ namespace RedditorClass.Components
         {
             return false;
         }
-        public override EntityFactComponent CreateRuntimeFactComponent()
+        public override int CalculateValue(ComponentRuntime runtime)
         {
-            return new DRComponent.DRComponentRuntime();
-        }
-        public class DRComponentRuntime : UnitFactComponent<DRComponent>
-        {
-            public int GetValue()
-            {
-                return base.Owner.Stats.GetStat(base.Settings.Stat).CalculatePermanentValue() / 2 - 5;
-            }
+            return runtime.Owner.Stats.GetStat(this.Stat).CalculatePermanentValue() / 2 - 5;
         }
     }
 }

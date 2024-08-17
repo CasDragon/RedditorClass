@@ -210,7 +210,7 @@ namespace RedditorClass.Features
         }
         private const string featurenamedr = "ChaToDR";
         private const string displaynamedr = "ChaToDR.Name";
-        private const string displaydescriptiondr = "ChaToChaToDR.Description";
+        private const string displaydescriptiondr = "ChaToDR.Description";
         public static BlueprintFeature ConfigureDR()
         {
             BlueprintFeature feature = FeatureConfigurator.New(featurenamedr, Guids.chatodr)
