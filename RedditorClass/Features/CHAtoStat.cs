@@ -37,9 +37,6 @@ namespace RedditorClass.Features
                 .AddDerivativeStatBonus(baseStat: StatType.Charisma,
                     descriptor: ModifierDescriptor.UntypedStackable,
                     derivativeStat: StatType.Charisma)
-                .AddDerivativeStatBonus(baseStat: StatType.Charisma,
-                    descriptor: ModifierDescriptor.UntypedStackable,
-                    derivativeStat: StatType.Charisma)
                 .AddRecalculateOnStatChange(stat: StatType.Charisma)
                 .Configure();
             return feature;

@@ -221,5 +221,11 @@
   {
     "Key": "ChaToChaCap.Description",
     "enGB": "The Redditor adds his {g|Encyclopedia:Charisma}Charisma{/g} bonus (if any) to his {g|Encyclopedia:Charisma}Charisma{/g}, again!"
+  },
+
+  {
+    "Key": "RedditSpellbook.Name",
+    "ProcessTemplates": false,
+    "enGB": "Redditor Spell Book"
   }
 ]

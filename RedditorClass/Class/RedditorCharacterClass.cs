@@ -8,6 +8,7 @@ using Kingmaker.RuleSystem;
 using RedditorClass.Utils;
 using Kingmaker.EntitySystem.Stats;
 using RedditorClass.Features;
+using BlueprintCore.Blueprints.Configurators.Classes.Spells;
 
 namespace RedditorClass.Class
 {
@@ -46,8 +47,9 @@ namespace RedditorClass.Class
             .AddPrerequisiteNoClassLevel(CharacterClassRefs.AnimalClass.Reference.Get())
             .AddToMaleEquipmentEntities("65e7ae8b40be4d64ba07d50871719259", "04244d527b8a1f14db79374bc802aaaa")
             .AddToFemaleEquipmentEntities("11266d19b35cb714d96f4c9de08df48e", "64abd9c4d6565de419f394f71a2d496f")
-            .SetSpellbook(SpellbookRefs.SorcererSpellbook.Reference.Get())
+            .SetSpellbook(RedditorSpellbook.Configure())
             .SetProgression(RedditorProgression.Configure())
+            .AddPrerequisiteIsPet(hideInUI: true, not: true)
             .SetSkillPoints(2)
             .AddToClassSkills(
                 StatType.SkillMobility,
@@ -64,7 +66,6 @@ namespace RedditorClass.Class
             .AddToRecommendedAttributes(StatType.Charisma)
             .AddToSignatureAbilities(Guids.chatocha)
             .Configure();
-
 
             BlueprintCharacterClassReference classref = magicclass.ToReference<BlueprintCharacterClassReference>();
             BlueprintRoot root = BlueprintTool.Get<BlueprintRoot>("2d77316c72b9ed44f888ceefc2a131f6");
